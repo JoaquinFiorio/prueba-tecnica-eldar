@@ -1,0 +1,79 @@
+<div class="flex align-items-center justify-content-center min-h-screen">
+    <div class="min-height-custom w-full md:w-6 p-3 bg-white border-round shadow-2">
+        <div class="flex flex-column align-items-center gap-3 p-5">
+            <img class="w-6 mb-3" src="../../../assets/images/logo.png" alt="Logo">
+
+            <p class="text-center">Let's get started</p>
+
+            <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="w-full">
+                <div class="p-fluid">
+
+                    <div class="flex align-items-start justify-content-center gap-2">
+                        <div class="field w-6">
+                            <label for="name">Name</label>
+                            <input pInputText id="name" formControlName="name"
+                                [ngClass]="{'ng-invalid': registerForm.controls['name'].invalid && registerForm.controls['name'].touched}">
+                            <small
+                                *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched"
+                                class="p-error">Name is required</small>
+                        </div>
+                        <div class="field w-6">
+                            <label for="lastName">Last name</label>
+                            <input pInputText id="lastName" formControlName="lastName"
+                                [ngClass]="{'ng-invalid': registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched}">
+                            <small
+                                *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched"
+                                class="p-error">Last name is required</small>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input pInputText id="username" formControlName="username"
+                            [ngClass]="{'ng-invalid': registerForm.controls['username'].invalid && registerForm.controls['username'].touched}">
+                        <small
+                            *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched"
+                            class="p-error">Username is required</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input pInputText id="email" formControlName="email"
+                            [ngClass]="{'ng-invalid': registerForm.controls['email'].invalid && registerForm.controls['email'].touched}">
+                        <small *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched"
+                            class="p-error">Email is required</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <p-password [toggleMask]="true" id="password" formControlName="password" [feedback]="true"
+                            [ngClass]="{'ng-invalid': registerForm.controls['password'].invalid && registerForm.controls['password'].touched}"></p-password>
+                        <small
+                            *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched"
+                            class="p-error">Password is required</small>
+                    </div>
+
+                    <div class="flex align-items-center gap-2">
+                        <p-checkbox [binary]="true" name="terms" formControlName="termsAccepted"></p-checkbox>
+                        <label for="terms">I have read the <a href="#">Terms and Conditions</a></label>
+                    </div>
+
+                    <button pButton type="submit" label="SIGN UP" class="w-full mt-3"
+                        [disabled]="registerForm.invalid"></button>
+                </div>
+            </form>
+
+            <p class="text-center mt-3">
+                Already have an account? <a [routerLink]="['/login']">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="min-height-custom h-full hidden md:flex md:w-full bg-cover bg-no-repeat bg-center text-white p-6"
+        style="background-image: url('../../../assets/images/bg-login.jpg'); background-color: #007bff;">
+        <div class="flex flex-column justify-content-center">
+            <h2 class="text-4xl font-bold mb-3">Create Your Eldar Account</h2>
+            <p class="text-lg">Embark on your journey with us! Sign up to take control of your account, monitor your adventures, and discover personalized services crafted for your needs. Experience the convenience of having all your data securely at your fingertips, with the assurance that your privacy is safeguarded.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="grid justify-content-center mt-4 w-full">
+    <div class="col-12 md:col-6">
+        <p-panel header="User Information">
+            <form [formGroup]="userForm" class="p-fluid">
+                <div class="field">
+                    <label for="username">Username</label>
+                    <input id="username" pInputText [value]="user.username" formControlName="username" placeholder="Enter your username">
+                </div>
+                <div class="field">
+                    <label for="name">First Name</label>
+                    <input id="name" pInputText [value]="user.name" formControlName="name" placeholder="Enter your first name">
+                </div>
+                <div class="field">
+                    <label for="last_name">Last Name</label>
+                    <input id="last_name" pInputText [value]="user.last_name" formControlName="last_name" placeholder="Enter your last name">
+                </div>
+                <div class="field">
+                    <label for="createdAt">Account role</label>
+                    <input id="createdAt" pInputText [value]="user.rol" disabled>
+                </div>
+                <div class="field">
+                    <label for="createdAt">Account created</label>
+                    <input id="createdAt" pInputText [value]="user.createdAt" formControlName="createdAt">
+                </div>
+                <div class="field mt-4 flex align-items-center justify-content-center gap-4">
+                    <button pButton label="Update" icon="pi pi-save" class="p-button-success mr-2" (click)="updateUser()"></button>
+                    <button pButton label="Log Out" icon="pi pi-sign-out" class="p-button-danger" (click)="logout()"></button>
+                </div>
+            </form>
+        </p-panel>
+    </div>
+</div>

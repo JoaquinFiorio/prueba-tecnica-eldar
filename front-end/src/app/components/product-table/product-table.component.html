@@ -1,0 +1,68 @@
+<p-button *ngIf="isAdmin" severity="success" label="New" icon="pi pi-plus" [style]="{ 'margin': '20px 10px' }" (onClick)="openNew()" />
+
+<p-table #dt [value]="products" [rows]="10" [paginator]="true" [tableStyle]="{ 'min-width': '75rem' }"
+    [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="title" style="min-width:15rem">
+                Title <p-sortIcon field="title" />
+            </th>
+            <th pSortableColumn="body">
+                Body <p-sortIcon field="body" />
+            </th>
+            <th pSortableColumn="id" style="min-width:10rem">
+                ID <p-sortIcon field="id" />
+            </th>
+            <th pSortableColumn="userId">
+                UserID <p-sortIcon field="userId" />
+            </th>
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>
+                {{ product.title }}
+            </td>
+            <td>
+                {{ product.body }}
+            </td>
+            <td>
+                {{ product.id }}
+            </td>
+            <td>
+                {{ product.userId }}
+            </td>
+            <td *ngIf="isAdmin">
+                <p-menu class="custom-menu-position" #menu [model]="getMenuItems(product)" [popup]="true"></p-menu>
+                <p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v"></p-button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Product Details" [modal]="true"
+    styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="field">
+            <label for="title">Title</label>
+            <input type="text" pInputText id="title" [(ngModel)]="product.title" required autofocus />
+            <small class="p-error" *ngIf="submitted && !product.title">
+                Title is required.
+            </small>
+        </div>
+        <div class="field">
+            <label for="body">Body</label>
+            <textarea id="body" pInputTextarea [(ngModel)]="product.body" required rows="3" cols="20">
+                    </textarea>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <p-button label="Cancel" icon="pi pi-times" [text]="true" (onClick)="hideDialog()" />
+        <p-button label="Save" icon="pi pi-check" [text]="true" (onClick)="saveProduct()" />
+    </ng-template>
+</p-dialog>
+
+<p-confirmDialog [style]="{ width: '450px' }" />

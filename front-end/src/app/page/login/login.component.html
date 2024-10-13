@@ -1,0 +1,49 @@
+<div class="flex min-h-screen">
+    <div class="w-full md:w-6">
+        <div class="flex justify-content-center flex-column align-items-center gap-3 bg-gray-100 p-5 h-full">
+            <img class="w-6" src="../../../assets/images/logo.png" alt="">
+
+            <div class="text-center">
+                <h1 class="text-2xl font-bold mb-2">Login to your account</h1>
+            </div>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="w-full">
+                <div class="p-fluid">
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input pInputText id="email" formControlName="email"
+                            [ngClass]="{'ng-invalid': loginForm.controls['email'].invalid && loginForm.controls['email'].touched}">
+                        <small *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched"
+                            class="p-error">Email is required</small>
+                    </div>
+
+                    <div class="field my-3">
+                        <label for="password">Password</label>
+                        <p-password [toggleMask]="true" id="password" formControlName="password" [feedback]="false"
+                            [ngClass]="{'ng-invalid': loginForm.controls['password'].invalid && loginForm.controls['password'].touched}"></p-password>
+                        <small *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"
+                            class="p-error">Password is required</small>
+                    </div>
+
+                    <p class="text-right"><a href="#">Forgot password?</a> Click here to reset.</p>
+
+                    <button pButton type="submit" label="LOGIN" class="w-full mt-3"
+                        [disabled]="loginForm.invalid"></button>
+                </div>
+            </form>
+
+            <p class="text-center mt-3">
+                Don't you have an account? <a [routerLink]="['/register']">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="hidden md:flex md:w-full bg-cover bg-no-repeat bg-center text-white p-6"
+        style="background-image: url('../../../assets/images/bg-login.jpg'); background-color: #007bff;">
+        <div class="flex flex-column justify-content-center">
+            <h2 class="text-4xl font-bold mb-3">Access to your Eldar Account</h2>
+            <p class="text-lg">Sign in to manage your account, track your activities, and enjoy personalized services.
+                Securely access all your data in one place, with the confidence that your privacy is protected.</p>
+        </div>
+    </div>
+</div>

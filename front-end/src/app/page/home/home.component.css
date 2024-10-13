@@ -1,0 +1,7 @@
+h1 {
+    color: #004990;
+}
+
+.custom-height {
+    min-height: 75vh;
+}

@@ -1,0 +1,16 @@
+<div class="bg-cover bg-no-repeat bg-center flex flex-column align-items-center justify-content-center min-h-screen overlay-container"
+    style="background-image: url('../../../assets/images/bg-error.jpg'); background-color: #007bff;">
+    <div class="flex flex-column align-items-center">
+        <!-- Logo -->
+        <img src="../../../assets/images/logo.png" alt="logo" class="mb-4 w-8">
+
+        <!-- Message -->
+        <h1 class="text-6xl text-white mb-2">ACCESS DENIED</h1>
+        <p class="text-white mb-4">You don't have permissions to access this route.</p>
+
+        <!-- Button -->
+        <button class="p-button p-component p-button-primary" (click)="goToLogin()">
+            <span class="p-button-label">Go to Login</span>
+        </button>
+    </div>
+</div>
