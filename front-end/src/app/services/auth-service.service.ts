@@ -12,7 +12,7 @@ import { UserInfo, UserResponse } from '../interfaces/UserInfo';
 })
 export class AuthServiceService {
 
-  url: string = 'http://localhost:3000/api/eldar';
+  url: string = 'https://prueba-tecnica-eldar-production.up.railway.app/api/eldar';
   isAuth = new Subject<boolean>();
   isAdmin = new BehaviorSubject<boolean>(false);
 
