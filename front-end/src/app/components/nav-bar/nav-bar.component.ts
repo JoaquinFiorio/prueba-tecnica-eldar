@@ -18,7 +18,7 @@ export class NavBarComponent implements OnInit{
                 label: 'Home',
                 icon: 'pi pi-home',
                 command: () => {
-                    this.router.navigate(['/eldar']);
+                    this.router.navigate(['/eldar/home']);
                 }
             },
             {
