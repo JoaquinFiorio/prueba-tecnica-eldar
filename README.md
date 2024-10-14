@@ -15,11 +15,11 @@ This project is a **technical test** developed with **Angular**, using **PrimeNG
 
 ## Technologies Used
 
-- **Angular**: A framework for building single-page web applications.
-- **PrimeNG**: A rich UI component library for Angular that accelerates the development of attractive interfaces.
-- **PrimeFlex**: A CSS utility and design system that facilitates the creation of flexible and responsive layouts.
-- **TypeScript**: A superset of JavaScript that adds static typing to the language.
-- **RxJS**: A library for handling reactive programming using observables.
+- Angular (16.0.0): A framework for building single-page web applications.
+- PrimeNG (16.9.1): A rich UI component library for Angular that accelerates the development of attractive interfaces.
+- PrimeFlex (3.3.1): A CSS utility and design system that facilitates the creation of flexible and responsive layouts.
+- TypeScript (5.0.2): A superset of JavaScript that adds static typing to the language.
+- RxJS (7.8.0): A library for handling reactive programming using observables.
 
 > [!IMPORTANT] 
 > Administrator credentials: email: eldar@eldar.com password: @Eldar123 User credentials: email: joaquin.fiorio@hotmail.com password: @Joaquin123
