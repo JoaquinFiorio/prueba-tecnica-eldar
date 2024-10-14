@@ -35,7 +35,7 @@ This project is a **technical test** developed with **Angular**, using **PrimeNG
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your_user/technical-test-eldar.git
+   git clone https://github.com/JoaquinFiorio/prueba-tecnica-eldar.git
 
 
 2. **Navigate to the project folder**:
