@@ -54,7 +54,7 @@ This project is a **technical test** developed with **Angular**, using **PrimeNG
    ng serve
 
 > [!NOTE]
-> If you want to initialize it on a specific port, for example, use --port 4100.
+> If you want to initialize it on a specific port, for example, use ng serve --port 4100.
 
 5. **Go to the development link**:
 
