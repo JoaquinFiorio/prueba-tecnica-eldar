@@ -14,7 +14,7 @@ This project is a **technical test** developed with **Angular**, using **PrimeNG
 - Responsive design using PrimeFlex.
 
 > [!IMPORTANT] 
-> Verify if your team has the correct compatible dependencies to run the project locally.
+> Verify if your computer has the correct compatible dependencies to run the project locally.
 
 ## Technologies Used
 
