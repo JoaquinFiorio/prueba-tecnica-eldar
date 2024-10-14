@@ -13,6 +13,9 @@ This project is a **technical test** developed with **Angular**, using **PrimeNG
 - Confirmation dialogs for critical actions.
 - Responsive design using PrimeFlex.
 
+> [!IMPORTANT] 
+> Verify if your team has the correct compatible dependencies to run the project locally.
+
 ## Technologies Used
 
 - Angular (16.0.0): A framework for building single-page web applications.
